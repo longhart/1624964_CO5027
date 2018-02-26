@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Assignment.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<title>
+       <asp:ContentPlaceHolder ID="title" runat="server">
+       </asp:ContentPlaceHolder>
+</title>
+<link href="~/css/Styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body runat="server">
+<div id="page">
+<div id="header">
+<h1>
+    <asp:ContentPlaceHolder ID="Heading1" runat="server">
+    </asp:ContentPlaceHolder>
+</h1>
+
+</div>
+
+
+
+<nav><!-- Defining the navigation menu -->
+<ul>
+    <li class="selected">
+    <a href="~/Default.aspx" runat="server">Home</a></li>
+    <li><a href="Account.aspx">My Account</a></li>
+    <li><a href="Products.aspx">All Products</a></li>
+    <li><a href="Contact.aspx">Contact us</a></li>
+    <li><a href="Cart.aspx">Shopping Cart</a></li>
+</ul>
+<section id="search"><!-- Search form -->
+                    <form action="#" onsubmit="return false;" method="get">
+                        <input type="text" onfocus="if (this.value =='Looking for..' ) this.value=''" onblur="if (this.value=='') this.value='Search..'" value="Looking for.." name="q">
+                        <input type="submit" value="Search">
+                    </form>
+</nav>
+
+<div class="logo_search">
+<div class="logo"><!-- Defining the logo element -->
+                    <a href="~/Default.aspx">
+                        <img src="images/logo.jpg" title="Smart Gadgets Wearable Co. logo" alt="Smart Gadgets Wearable Co." />
+                    </a>
+</div>
+</div>   
+
+<div id="content">
+<h2>
+    <asp:ContentPlaceHolder ID="Heading2" runat="server">
+    </asp:ContentPlaceHolder>    
+</h2>
+
+    <asp:ContentPlaceHolder ID="Content" runat="server">
+    </asp:ContentPlaceHolder>
+
+</div>
+   
+    
+    <footer>     
+            Copyright © 2018 Smart Gadgets Wearable Co.   
+    </footer>
+
+</div>   
+</body>
+</html>
