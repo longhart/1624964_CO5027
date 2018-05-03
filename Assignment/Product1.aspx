@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Product1.aspx.cs" Inherits="Assignment.Product1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
+    Smart Gadgets Wearable Co. | Product Details Page
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Heading1" runat="server">
 </asp:Content>
@@ -58,7 +59,7 @@
             <br />
             <div class="img">
                 <a href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>">
-                   <asp:Image runat="server" ImageUrl=<%#("images/ProductImages/")+Eval("Product_ID") + ".jpg"%> />
+                   <asp:Image runat="server" alt="Product Image" ImageUrl=<%#("images/ProductImages/")+Eval("Product_ID") + ".jpg"%> />
                     </a>
             </div>
             <br />

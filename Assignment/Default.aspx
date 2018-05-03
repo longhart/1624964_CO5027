@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Assignment.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
-    Smart Gadgets Wearable Co.
+    Smart Gadgets Wearable Co. | Home Page
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Heading1" runat="server">
     
@@ -30,7 +30,7 @@
 
                             <div class="img">
                                 <a href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>">
-                                    <asp:Image runat="server" ImageUrl=<%#("images/ProductImages/")+Eval("Product_ID") + ".jpg"%>/>
+                                    <asp:Image runat="server" alt="Product Image" ImageUrl=<%#("images/ProductImages/")+Eval("Product_ID") + ".jpg"%> />
                                 </a>
                             </div>
                             
@@ -56,7 +56,7 @@
 
                 
                 <div id="right">
-                    <h3>Top selling</h3>
+                    <h3>Low Price</h3>
                     <ul>
                         <li>
                             <asp:Repeater runat="server" DataSourceID="SqlDataSource2">
@@ -83,7 +83,7 @@
         <FooterTemplate></ul></FooterTemplate>
                             </asp:Repeater>
 
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_1624964_co5027_asg_aConnectionString %>" SelectCommand="SELECT TOP 3 * FROM [Product] WHERE ([Product_Quantity] &gt;= @Product_Quantity) ORDER BY [Product_Price] DESC">
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_1624964_co5027_asg_aConnectionString %>" SelectCommand="SELECT TOP 3 * FROM [Product] WHERE ([Product_Quantity] &gt;= @Product_Quantity) ORDER BY [Product_Price] ASC">
                                 <SelectParameters>
                                     <asp:QueryStringParameter DefaultValue="1" Name="Product_Quantity" QueryStringField="id" Type="Int32" />
                                 </SelectParameters>

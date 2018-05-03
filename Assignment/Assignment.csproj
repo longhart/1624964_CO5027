@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -154,12 +155,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Product5.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="admin\add.aspx" />
     <Content Include="admin\List.aspx" />
     <Content Include="admin\UploadImage.aspx" />
-    <Content Include="Cart.aspx" />
     <Content Include="contactUS.aspx" />
     <Content Include="js\jquery.js" />
     <Content Include="Login.aspx" />
@@ -196,13 +195,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Product5.aspx.cs">
-      <DependentUpon>Product5.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Product5.aspx.designer.cs">
-      <DependentUpon>Product5.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,13 +229,6 @@
     </Compile>
     <Compile Include="admin\UploadImage.aspx.designer.cs">
       <DependentUpon>UploadImage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Cart.aspx.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cart.aspx.designer.cs">
-      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="contactUS.aspx.cs">
       <DependentUpon>contactUS.aspx</DependentUpon>

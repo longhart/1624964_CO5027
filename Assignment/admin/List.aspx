@@ -1,5 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="Assignment.admin.List" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="Assignment.admin.List" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
+    Admin | List Page
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Heading1" runat="server">
 </asp:Content>
@@ -9,7 +10,7 @@
     
     <div id="productcontentleft">
     <form id="form1" runat="server">
-        <h3>Hello</h3>
+        <h3>Welcome to the List Page</h3>
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Product_ID" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="Black" BorderStyle="Dotted" CellSpacing="-1" GridLines="None">
             <Columns>
                 <asp:BoundField DataField="Product_ID" HeaderText="Product_ID" ReadOnly="True" SortExpression="Product_ID" />
@@ -21,7 +22,7 @@
                 <ControlStyle CssClass="Button" />
                 </asp:CommandField>
                 <asp:HyperLinkField DataNavigateUrlFields="Product_ID" DataNavigateUrlFormatString="UploadImage.aspx?Id={0}" Text="Update Image" />
-                <asp:ImageField AlternateText="Product Image" DataImageUrlField="Product_ID" DataImageUrlFormatString="/images/ProductImages/{0}.jpg" HeaderText="Product Image">
+                <asp:ImageField AlternateText="Product Image" DataImageUrlField="Product_ID" DataImageUrlFormatString="~/images/ProductImages/{0}.jpg" HeaderText="Product Image">
                     <ControlStyle Height="80px" Width="80px" />
                 </asp:ImageField>
             </Columns>

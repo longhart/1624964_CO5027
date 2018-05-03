@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="contactUS.aspx.cs" Inherits="Assignment.contactUS" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
-    Contact Page
+    Smart Gadgets Wearable Co. | Contact Page
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Heading1" runat="server">
 </asp:Content>

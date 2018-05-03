@@ -1,5 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="UploadImage.aspx.cs" Inherits="Assignment.admin.UploadImage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UploadImage.aspx.cs" Inherits="Assignment.admin.UploadImage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
+    Admin | Upload Image
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Heading1" runat="server">
 </asp:Content>
@@ -31,7 +32,7 @@
                 Current Image for Product ID:
                 <asp:Label ID="Product_IDLabel" runat="server" Text='<%# Eval("Product_ID") %>' />
                 <p></p>
-                <asp:Image runat="server" ImageUrl=<%#("/images/ProductImages/")+Eval("Product_ID") + ".jpg"%> />
+                <asp:Image runat="server" alt="Product Image" ImageUrl=<%#("~/images/ProductImages/")+Eval("Product_ID") + ".jpg"%> />
                 <br />
 
             </ItemTemplate>

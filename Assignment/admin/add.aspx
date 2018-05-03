@@ -1,5 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Admin.Master" AutoEventWireup="true" CodeBehind="add.aspx.cs" Inherits="Assignment.admin.add" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="add.aspx.cs" Inherits="Assignment.admin.add" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
+    Admin | Add Page
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Heading1" runat="server">
 </asp:Content>

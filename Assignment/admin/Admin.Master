@@ -27,10 +27,10 @@
 <ul>
     <li class="selected">
     <a href="~/Default.aspx" runat="server">Home</a></li>
-    <li><a href="/Login.aspx" runat="server">My Account</a></li>
-    <li><a href="/Product.aspx" runat="server">Products</a></li>
-    <li><a href="/ContactUS.aspx" runat="server">Contact us</a></li>
-    <li><a href="/Cart.aspx" runat="server">Shopping Cart</a></li>
+    <li><a href="~/Login.aspx" runat="server">My Account</a></li>
+    <li><a href="~/Product.aspx" runat="server">Products</a></li>
+    <li><a href="~/ContactUS.aspx" runat="server">Contact us</a></li>
+    <li><a href="~/Cart.aspx" runat="server">Shopping Cart</a></li>
 </ul>
 <section id="search"><!-- Search form -->
                     <form action="#" onsubmit="return false;" method="get">
@@ -41,9 +41,9 @@
 </nav>
 
 <div class="logo_search">
-<div class="logo"><!-- Defining the logo element -->
-                    <a href="/Default.aspx">
-                        <img src="/images/logo.jpg" title="Smart Gadgets Wearable Co. logo" alt="Smart Gadgets Wearable Co." />
+<div class="logo" runat="server"><!-- Defining the logo element -->
+                    <a href="~/Default.aspx" runat="server">
+                        <img src="~/images/logo.jpg" title="Smart Gadgets Wearable Co. logo" alt="Smart Gadgets Wearable Co." />
                     </a>
 </div>
 </div>   

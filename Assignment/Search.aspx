@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Search.aspx.cs" Inherits="Assignment._21" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
+    Smart Gadgets Wearable Co. | Search Page
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Heading1" runat="server">
 </asp:Content>
@@ -20,7 +21,7 @@
     
         
         <h3> Search Result</h3>
-
+        <br />
         <asp:Literal ID="litSearch" runat="server"></asp:Literal>
 
     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
@@ -29,7 +30,8 @@
         <ItemTemplate>
             <li>
               <div class="img">
-                   <asp:Image runat="server" ImageUrl=<%#("images/ProductImages/")+Eval("Product_ID") + ".jpg"%> />
+                  <a href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>">
+                   <asp:Image runat="server" alt="Product Image" ImageUrl=<%#("images/ProductImages/")+Eval("Product_ID") + ".jpg"%> />
                    </div>
                    <div class="info">
                    <a class="title" href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>"> <%#Eval("Product_Name") %></a>     
