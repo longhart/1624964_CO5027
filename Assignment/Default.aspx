@@ -9,124 +9,88 @@
     
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Content" runat="server">
-     <div id="main"><!-- Defining submain content section -->
-            <section id="content"><!-- Defining the content section #2 -->
+                <form id="form1" runat="server">
+                    <div id="seachingleft">
+                    <asp:TextBox ID="TextSearch" runat="server" Text="" CssClass="TextBoxSearch"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="search" OnClick="Button1_Click" CssClass="ButtonSearch" />
+                       </div>
+                    <br />
+                    <br />
+                    <br />
+
+
                 <div id="left">
-                    <h3>Latest products</h3>
-                    <ul>
+                   
+                        <h3>Products Overview</h3>
+                        <br />
+                    <asp:Repeater ID="ProductList" runat="server" DataSourceID="SqlDataSource1">
+                     <HeaderTemplate><ul></HeaderTemplate>
+                       <ItemTemplate>
                         <li>
-                            <div class="img"><a href="#"><img alt="" src="/images/post1.jpg"></a></div>
+
+                            <div class="img">
+                                <a href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>">
+                                    <asp:Image runat="server" ImageUrl=<%#("images/ProductImages/")+Eval("Product_ID") + ".jpg"%>/>
+                                </a>
+                            </div>
+                            
                             <div class="info">
-                                <a class="title" href="#">Apple Watch Series 3</a>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$550.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
+                            <a class="title" href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>"> <%#Eval("Product_Name") %></a>
+                            
+                           
+                            <div class="price">
+                                
+                                <a class="st" href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>">$<%#string.Format("{0:n2}",Eval("Product_Price")) %></a></div>
                             </div>
                         </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="images/post2.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Samsung Gear S3</a>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$250.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="images/post3.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Ticwatch E</a>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$350.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="images/post4.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 4</a>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$550.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="images/post5.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 5</a>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$250.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="images/post6.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 6</a>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$350.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                             </ItemTemplate>
+        <FooterTemplate></ul></FooterTemplate>
+    </asp:Repeater>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_1624964_co5027_asg_aConnectionString %>" SelectCommand="SELECT TOP 6 * FROM [Product] WHERE ([Product_Quantity] &gt;= @Product_Quantity) ORDER BY [Product_Quantity] ASC">
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="1" Name="Product_Quantity" QueryStringField="ID" Type="Int32" />
+            </SelectParameters>
+                        </asp:SqlDataSource>
+   </div>
+    </form>
+
+                
                 <div id="right">
                     <h3>Top selling</h3>
                     <ul>
                         <li>
-                            <div class="img"><a href="#"><img alt="" src="images/post6.jpg"></a></div>
+                            <asp:Repeater runat="server" DataSourceID="SqlDataSource2">
+                                <HeaderTemplate><ul></HeaderTemplate>
+                       <ItemTemplate>
+                        <li>
+
+                            <div class="img">
+                                <a href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>">
+                                <asp:Image runat="server" ImageUrl=<%#("images/ProductImages/")+Eval("Product_ID") + ".jpg"%>  />
+                                </a>
+                            </div>
+                            
                             <div class="info">
-                                <a class="title" href="#">Product 7</a>
-                                <div class="price">
-                                    <span class="st">$600.00 </span>
-                                </div>
+                            <a class="title" href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>"> <%#Eval("Product_Name") %></a>
+                            
+                           
+                            <div class="price">
+                                
+                                <a class="st" href="<%#Eval("Product_ID","Product1.aspx?Id={0}") %>">$<%#string.Format("{0:n2}",Eval("Product_Price")) %></a></div>
                             </div>
                         </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="images/post5.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 8</a>
-                                <div class="price">
-                                    <span class="st">$500.00 </span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="images/post4.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 9</a>
-                                <div class="price">
-                                    <span class="st">$700.00 </span>
-                                </div>
-                            </div>
+                             </ItemTemplate>
+        <FooterTemplate></ul></FooterTemplate>
+                            </asp:Repeater>
+
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:db_1624964_co5027_asg_aConnectionString %>" SelectCommand="SELECT TOP 3 * FROM [Product] WHERE ([Product_Quantity] &gt;= @Product_Quantity) ORDER BY [Product_Price] DESC">
+                                <SelectParameters>
+                                    <asp:QueryStringParameter DefaultValue="1" Name="Product_Quantity" QueryStringField="id" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
                         </li>
                     </ul>
                 </div>
-            </section>
-        </div>
+          
 
 </asp:Content>

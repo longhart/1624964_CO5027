@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Assignment
 {
-    public partial class SimpleForm : System.Web.UI.Page
+    public partial class _21 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,10 @@ namespace Assignment
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Literal1.Text = "Hello " + TextBox1.Text;
+            string searchvalue = TextSearch.Text;
+            litSearch.Text = "Here are your search result for " + searchvalue;
+            Response.Redirect("~/Search.aspx?find=" + searchvalue);
         }
+        
     }
 }

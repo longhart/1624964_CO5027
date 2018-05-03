@@ -13,5 +13,11 @@ namespace Assignment
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string searchvalue = TextSearch.Text;
+            Response.Redirect("~/Search.aspx?find=" + searchvalue);
+        }
     }
 }

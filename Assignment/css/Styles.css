@@ -3,7 +3,8 @@ padding:0; margin:0;}
 
 body {
 	background-color:#ECF3F8;
-    font-family: Arial;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
 }
 #page{
 	width:1000px;
@@ -14,6 +15,7 @@ body {
 
 a, a:visited{
 	color:#87cefa;
+    text-decoration: none;
 	}
 
 
@@ -47,7 +49,7 @@ nav ul li {
     float: left;
 }
 nav ul li a {
-    color: #FFFFFF;
+    color: #F7F7F7;
     display: block;
     font-size: 11px;
     font-weight: bold;
@@ -59,8 +61,27 @@ nav ul li a {
     text-transform: uppercase;
 }
     nav ul li a:hover, nav ul li.selected a {
-        background: none repeat scroll 0 0 #CACCCE;
+        background: none repeat scroll 0 0 #3C3C3C;
 }
+
+    ul.navigation
+{
+    background:#fff;
+}
+ul.navigation li a
+{
+    text-decoration:none;
+}
+ul.navigation li a.on
+{
+    background:yellow;
+    padding:2px 6px;
+}
+
+
+
+
+
 
     /*logo and search form*/
 .logo_search {
@@ -80,6 +101,11 @@ nav ul li a {
 #search form {
     float:right;
 }
+
+
+
+
+
 
 
 /* Content section */
@@ -198,6 +224,7 @@ nav ul li a {
     font-size: 11px;
     line-height: 16px;
     margin-right: 3px;
+    text-decoration: none;
 }
 #content #right ul li .info .price .st {
     color: #383838;
@@ -228,4 +255,172 @@ nav ul li a {
 
 #User {
     color: #313335;
+}
+
+
+
+#content #seachingleft {
+    float: left;
+    margin: 0 2%;
+    width: 60%;
+}
+
+
+.TextBox {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0E0E0;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    height: 15px;
+    padding: 5px;
+    width: 129px;
+}
+
+.TextBoxSearch {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0E0E0;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    height: 15px;
+    padding: 5px;
+    width: 345px;
+
+    
+   
+}
+.TextBoxBody {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0E0E0;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    height: 50px;
+    padding: 5px;
+    width: 129px;
+}
+.ButtonSearch {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-left-width:0px;
+    color: #383838;
+    cursor:pointer;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: 27px;
+    padding: 0;
+    width: 64px;
+    margin-right: 2px;
+    
+}
+
+.Button {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-left-width:0px;
+    color: #383838;
+    cursor:pointer;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: 27px;
+    padding: 0;
+    width: 64px;
+    margin-right: 2px;
+}
+
+.ButtonAdminBack {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-left-width:0px;
+    color: #383838;
+    cursor:pointer;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: 27px;
+    padding: 0;
+    width: 150px;
+}
+
+.font {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+}
+
+.admincontent {
+    border: 1px solid #f7e3e3;
+    float: left;
+    margin: 0 2%;
+    width: 60%;
+}
+
+
+#content #admincontentleft, #content #admincontentright {
+    border: 1px solid #f7e3e3;
+    float: left;
+    margin: 0 2%;
+    width: 80%;
+}
+#content #admincontentright {
+    margin-left: 0;
+    width: 10%;
+}
+
+
+#content #productcontentleft, #content #productcontentright {
+    border: 1px solid #f7e3e3;
+    float: left;
+    margin: 0 2%;
+    width: 95%;
+}
+#content #productcontentright {
+    margin-left: 0;
+    width: 5%;
+}
+
+#content #productcontentleft ul li {
+    float:left;
+    padding-bottom: 21px;
+    width: 25%;
+}
+#content #productcontentleft ul li:hover {
+    background-color: #fbfbfb;
+}
+
+#content #productcontentleft ul li .img {
+    text-align: center;
+}
+
+#content #productcontentleft ul li .img img {
+    height:128px;
+    width:128px;
+}
+#content #productcontentleft ul li .info {
+    padding: 17px 20px 0 19px;
+}
+
+#content #productcontentleft ul li .info p {
+    color: #7F7F7F;
+    font-size: 11px;
+    line-height: 16px;
+    padding-top: 3px;
+}
+#content #productcontentleft ul li .info .price {
+    background: none repeat scroll 0 0 #F7F7F7;
+    color: #383838;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+    margin: 17px 0 10px;
+    padding: 6px 0 6px 8px;
+}
+#content #productcontentleft ul li .info .price .st {
+    color: #7F7F7F;
+    font-size: 11px;
+    line-height: 16px;
+    margin-right: 3px;
+    text-decoration: none;
 }

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Assignment
+namespace Assignment.Member
 {
 
 
-    public partial class Products
+    public partial class Cart
     {
     }
 }
